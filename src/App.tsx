@@ -11,11 +11,12 @@ import {
   Typography,
 } from '@mui/material'
 import { pink } from '@mui/material/colors'
+import { Field } from './Fields'
 import { questionsA, titleA } from './questionsA'
 
 const theme = createTheme({
   palette: {
-    primary: { main: '#F40256' },
+    secondary: { main: '#F40256' },
     background: { default: pink[100] },
   },
 })
@@ -37,10 +38,13 @@ function App() {
             <Typography fontWeight='bold'>
               {q.id}. {q.title}
             </Typography>
+
+            <Field q={q} />
+
             <Stack direction='row' justifyContent='flex-end'>
               <Button
                 variant='contained'
-                color='primary'
+                color='secondary'
                 disableElevation
                 startIcon={<PlayCircleOutlinedIcon />}
               >
@@ -50,7 +54,7 @@ function App() {
           </Card>
         ))}
 
-        <Button variant='contained' color='secondary' sx={{ mt: 2 }}>
+        <Button variant='contained' color='primary' sx={{ mt: 2 }}>
           送信
         </Button>
 

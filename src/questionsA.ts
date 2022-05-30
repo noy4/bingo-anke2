@@ -6,33 +6,34 @@ export const FIVE_POINT = 'fivePoint'
 export const TEXTAREA = 'textarea'
 export const NUMBER = 'number'
 
+const FIELD_TYPE = {
+  NAME,
+  DISPLAY_NAME,
+  FROM,
+  SEX,
+  FIVE_POINT,
+  TEXTAREA,
+  NUMBER,
+} as const
+type FieldType = typeof FIELD_TYPE[keyof typeof FIELD_TYPE]
+
 export const titleA = 'アンケートについてのアンケート'
 
-export const questionsA = [
-  {
-    id: 'Q1',
-    type: NAME,
-    title: '名前',
-    slotCount: 4,
-  },
-  {
-    id: 'Q2',
-    type: DISPLAY_NAME,
-    title: '公開名',
-    slotCount: 4,
-  },
-  {
-    id: 'Q3',
-    type: FROM,
-    title: '所属',
-    slotCount: 4,
-  },
-  {
-    id: 'Q4',
-    type: SEX,
-    title: '性別',
-    slotCount: 4,
-  },
+export type Question = {
+  id: string
+  type: FieldType
+  title: string
+  slotCount: number
+  negative?: string
+  positive?: string
+  unit?: string
+}
+
+export const questionsA: Question[] = [
+  { id: 'Q1', type: NAME, title: '名前', slotCount: 4 },
+  { id: 'Q2', type: DISPLAY_NAME, title: '公開名', slotCount: 4 },
+  { id: 'Q3', type: FROM, title: '所属', slotCount: 4 },
+  { id: 'Q4', type: SEX, title: '性別', slotCount: 4 },
   {
     id: 'Q5',
     type: FIVE_POINT,
