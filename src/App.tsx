@@ -1,42 +1,60 @@
+import PlayCircleOutlinedIcon from '@mui/icons-material/PlayCircleOutlined'
 import {
+  Box,
+  Button,
   Card,
-  CardActions,
-  CardContent,
   Container,
   createTheme,
   CssBaseline,
-  Paper,
+  Stack,
   ThemeProvider,
   Typography,
 } from '@mui/material'
-import { pink, red } from '@mui/material/colors'
-import { questionsA } from './questionsA'
+import { pink } from '@mui/material/colors'
+import { questionsA, titleA } from './questionsA'
 
 const theme = createTheme({
-  palette: { background: { default: pink[100] } },
+  palette: {
+    primary: { main: '#F40256' },
+    background: { default: pink[100] },
+  },
 })
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+
       <Container maxWidth='xs'>
-        <Paper sx={{ p: 4, mt: 2 }}>
+        <Card sx={{ p: 4, mt: 2 }}>
           <Typography variant='h5' fontWeight='bold'>
-            アンケートについてのアンケート（全15問）
+            {titleA}（全{questionsA.length}問）
           </Typography>
-        </Paper>
+        </Card>
 
         {questionsA.map((q, index) => (
-          <Card key={index} sx={{ mt: 2 }}>
-            <CardContent>
-              <Typography fontWeight='bold'>
-                {q.id}. {q.title}
-              </Typography>
-            </CardContent>
-            <CardActions></CardActions>
+          <Card key={index} sx={{ mt: 2, p: 2 }}>
+            <Typography fontWeight='bold'>
+              {q.id}. {q.title}
+            </Typography>
+            <Stack direction='row' justifyContent='flex-end'>
+              <Button
+                variant='contained'
+                color='primary'
+                disableElevation
+                startIcon={<PlayCircleOutlinedIcon />}
+              >
+                {'ガラポン'}
+              </Button>
+            </Stack>
           </Card>
         ))}
+
+        <Button variant='contained' color='secondary' sx={{ mt: 2 }}>
+          送信
+        </Button>
+
+        <Box mt={32} />
       </Container>
     </ThemeProvider>
   )
