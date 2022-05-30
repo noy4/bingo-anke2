@@ -8,6 +8,7 @@ import {
   Typography,
   InputAdornment,
 } from '@mui/material'
+import { useFormContext } from 'react-hook-form'
 import {
   DISPLAY_NAME,
   FIVE_POINT,
@@ -20,15 +21,26 @@ import {
 } from './questionsA'
 
 function NameField() {
+  const { register } = useFormContext()
   return (
     <Stack direction='row' spacing={2} sx={{ my: 2 }}>
-      <TextField placeholder='姓' variant='standard' helperText='*必須' />
-      <TextField placeholder='名' variant='standard' />
+      <TextField
+        placeholder='姓'
+        variant='standard'
+        helperText='*必須'
+        {...(register('lastName'), { required: true })}
+      />
+      <TextField
+        placeholder='名'
+        variant='standard'
+        {...register('firstName')}
+      />
     </Stack>
   )
 }
 
 function DisplayNameField() {
+  const { register } = useFormContext()
   return (
     <TextField
       placeholder='未入力で姓になります'
@@ -36,11 +48,13 @@ function DisplayNameField() {
       margin='normal'
       fullWidth
       helperText='*Web上で公開されます。パスワードなどの個人情報を書かないでください。'
+      {...register('displayName')}
     />
   )
 }
 
 function FromField() {
+  const { register } = useFormContext()
   return (
     <TextField
       placeholder='例）九州大学'
@@ -48,30 +62,49 @@ function FromField() {
       margin='normal'
       fullWidth
       helperText='*Web上で公開されます。パスワードなどの個人情報を書かないでください。'
+      {...register('from')}
     />
   )
 }
 
 function SexField() {
+  const { register } = useFormContext()
   return (
     <RadioGroup sx={{ my: 1, ml: 1 }}>
-      <FormControlLabel value='male' control={<Radio />} label='男性' />
-      <FormControlLabel value='female' control={<Radio />} label='女性' />
-      <FormControlLabel value='other' control={<Radio />} label='その他' />
+      <FormControlLabel
+        {...register('sex')}
+        value='male'
+        label='男性'
+        control={<Radio />}
+      />
+      <FormControlLabel
+        {...register('sex')}
+        value='female'
+        label='女'
+        control={<Radio />}
+      />
+      <FormControlLabel
+        {...register('sex')}
+        value='other'
+        label='その他'
+        control={<Radio />}
+      />
     </RadioGroup>
   )
 }
 
 function FivePointField({ q }: { q: Question }) {
+  const { register } = useFormContext()
   return (
     <Box sx={{ my: 1 }}>
       <RadioGroup row sx={{ my: 1, justifyContent: 'center' }}>
         {[...Array(5)].map((_, i) => (
           <FormControlLabel
             key={i}
+            {...register(q.id)}
             labelPlacement='top'
-            value={i + 1}
-            label={i + 1}
+            value={String(i + 1)}
+            label={String(i + 1)}
             control={<Radio />}
             sx={{ m: 0 }}
           />
@@ -86,6 +119,7 @@ function FivePointField({ q }: { q: Question }) {
 }
 
 function NumberField({ q }: { q: Question }) {
+  const { register } = useFormContext()
   return (
     <TextField
       type='number'
@@ -95,11 +129,13 @@ function NumberField({ q }: { q: Question }) {
       InputProps={{
         endAdornment: <InputAdornment position='end'>{q.unit}</InputAdornment>,
       }}
+      {...register(q.id)}
     />
   )
 }
 
-function TextareaField() {
+function TextareaField({ q }: { q: Question }) {
+  const { register } = useFormContext()
   return (
     <TextField
       placeholder='回答'
@@ -107,6 +143,7 @@ function TextareaField() {
       margin='normal'
       fullWidth
       multiline
+      {...register(q.id)}
     />
   )
 }
@@ -118,6 +155,6 @@ export function Field({ q }: { q: Question }) {
   if (q.type === SEX) return <SexField />
   if (q.type === FIVE_POINT) return <FivePointField q={q} />
   if (q.type === NUMBER) return <NumberField q={q} />
-  if (q.type === TEXTAREA) return <TextareaField />
+  if (q.type === TEXTAREA) return <TextareaField q={q} />
   return null
 }
