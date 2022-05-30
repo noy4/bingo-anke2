@@ -1,44 +1,44 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import {
+  Card,
+  CardActions,
+  CardContent,
+  Container,
+  createTheme,
+  CssBaseline,
+  Paper,
+  ThemeProvider,
+  Typography,
+} from '@mui/material'
+import { pink, red } from '@mui/material/colors'
+import { questionsA } from './questionsA'
+
+const theme = createTheme({
+  palette: { background: { default: pink[100] } },
+})
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Container maxWidth='xs'>
+        <Paper sx={{ p: 4, mt: 2 }}>
+          <Typography variant='h5' fontWeight='bold'>
+            アンケートについてのアンケート（全15問）
+          </Typography>
+        </Paper>
+
+        {questionsA.map((q, index) => (
+          <Card key={index} sx={{ mt: 2 }}>
+            <CardContent>
+              <Typography fontWeight='bold'>
+                {q.id}. {q.title}
+              </Typography>
+            </CardContent>
+            <CardActions></CardActions>
+          </Card>
+        ))}
+      </Container>
+    </ThemeProvider>
   )
 }
 
