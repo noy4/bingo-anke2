@@ -1,9 +1,12 @@
 import { Modal, Stack, Box, Avatar, Container } from '@mui/material'
 import { Bingo } from './Bingo'
+import { ModalState } from './state'
 
 export function BingoModal() {
+  const { isOpen, onClose } = ModalState.useContainer()
+
   return (
-    <Modal open>
+    <Modal open={isOpen} onClose={onClose}>
       <Container
         maxWidth='xs'
         sx={{
@@ -31,6 +34,7 @@ export function BingoModal() {
             </Avatar>
           ))}
         </Stack>
+
         <Bingo sx={{ mt: 2 }} />
       </Container>
     </Modal>

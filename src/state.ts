@@ -6,3 +6,10 @@ export const BingoCardState = createContainer(() => {
   const [bingoCard, setBingoCard] = useState(() => makeBingoCard())
   return { bingoCard, setBingoCard }
 })
+
+export const ModalState = createContainer(() => {
+  const [isOpen, setIsOpen] = useState(false)
+  const onOpen = () => setIsOpen(true)
+  const onClose = () => setIsOpen(false)
+  return { isOpen, setIsOpen, onOpen, onClose }
+})
