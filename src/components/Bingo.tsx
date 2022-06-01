@@ -1,6 +1,6 @@
 import { Box, Avatar, Paper, Grid, SxProps } from '@mui/material'
 import { blue } from '@mui/material/colors'
-import { BingoCardState } from './state'
+import { BingoCardState } from '@/state'
 
 export function Bingo({ sx }: { sx?: SxProps }) {
   const { bingoCard } = BingoCardState.useContainer()

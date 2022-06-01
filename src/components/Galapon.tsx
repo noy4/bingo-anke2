@@ -3,7 +3,7 @@ import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline'
 import { Button } from '@mui/material'
 import { useMemo, useState } from 'react'
 import { useFormContext } from 'react-hook-form'
-import { checkBingo } from './bingoCard'
+import { checkBingo } from '@/lib/bingoCard'
 import {
   DISPLAY_NAME,
   FIVE_POINT,
@@ -13,7 +13,7 @@ import {
   Question,
   SEX,
   TEXTAREA,
-} from './questionsA'
+} from '@/lib/questionsA'
 import {
   BallsState,
   BingoCardState,
@@ -22,7 +22,7 @@ import {
   ScoreState,
   SlotCountState,
   SlotValuesState,
-} from './state'
+} from '@/state'
 
 const sleep = (ms: number) => {
   return new Promise((resolve) => setTimeout(resolve, ms))
@@ -42,11 +42,9 @@ export function Galapon({ q }: { q: Question }) {
 
   const galable = useMemo(() => {
     if (q.type === NAME)
-      return formValues['familyName']?.trim() && formValues['firstName']?.trim()
+      return formValues['lastName']?.trim() && formValues['firstName']?.trim()
     if (q.type === DISPLAY_NAME)
-      return (
-        formValues['familyName']?.trim() || formValues['displayName']?.trim()
-      )
+      return formValues['lastName']?.trim() || formValues['displayName']?.trim()
     if (q.type === FROM) return formValues['from']?.trim()
     if (q.type === SEX) return formValues['sex']
     if (q.type === FIVE_POINT) return formValues[q.id]

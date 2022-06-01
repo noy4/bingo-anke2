@@ -10,13 +10,13 @@ import {
   Typography,
 } from '@mui/material'
 import { FormProvider, useForm } from 'react-hook-form'
-import { Bingo } from './Bingo'
-import { BingoModal } from './BingoModal'
-import { Field } from './Fields'
-import { Galapon } from './Galapon'
-import { questionsA, titleA } from './questionsA'
-import { Ranking } from './Ranking'
-import { DrawerState } from './state'
+import { Bingo } from '@/components/Bingo'
+import { BingoModal } from '@/components/BingoModal'
+import { Field } from '@/components/Fields'
+import { Galapon } from '@/components/Galapon'
+import { questionsA, titleA } from '@/lib/questionsA'
+import { Ranking } from '@/components/Ranking'
+import { DrawerState } from '@/state'
 
 function App() {
   const { isOpen, onOpen, onClose } = DrawerState.useContainer()

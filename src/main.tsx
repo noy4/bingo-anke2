@@ -2,7 +2,7 @@ import { createTheme, CssBaseline, ThemeProvider } from '@mui/material'
 import { pink } from '@mui/material/colors'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App'
+import App from '@/App'
 import {
   BallsState,
   BingoCardState,
@@ -13,7 +13,7 @@ import {
   ScoreState,
   SlotCountState,
   SlotValuesState,
-} from './state'
+} from '@/state'
 
 const theme = createTheme({
   palette: {

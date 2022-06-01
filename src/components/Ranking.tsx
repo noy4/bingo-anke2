@@ -1,6 +1,6 @@
 import { Avatar, Box, List, Paper, Typography } from '@mui/material'
 import { blue, pink } from '@mui/material/colors'
-import { RankersState } from './state'
+import { RankersState } from '@/state'
 
 export function Ranking() {
   const { rankers } = RankersState.useContainer()

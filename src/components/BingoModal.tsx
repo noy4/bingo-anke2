@@ -1,6 +1,6 @@
 import { Modal, Stack, Box, Avatar, Container } from '@mui/material'
-import { Bingo } from './Bingo'
-import { ModalState, SlotValuesState } from './state'
+import { Bingo } from '@/components/Bingo'
+import { ModalState, SlotValuesState } from '@/state'
 
 export function BingoModal() {
   const { isOpen, onClose } = ModalState.useContainer()

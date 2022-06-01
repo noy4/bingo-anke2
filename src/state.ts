@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { createContainer } from 'unstated-next'
-import { makeBingoCard } from './bingoCard'
-import { Ranker } from './types'
+import { makeBingoCard } from '@/lib/bingoCard'
+import { Ranker } from '@/types'
 
 const useDisclosure = () => {
   const [isOpen, setIsOpen] = useState(false)

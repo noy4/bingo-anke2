@@ -18,7 +18,7 @@ import {
   Question,
   SEX,
   TEXTAREA,
-} from './questionsA'
+} from '@/lib/questionsA'
 
 function NameField() {
   const { register } = useFormContext()
@@ -28,7 +28,7 @@ function NameField() {
         placeholder='姓'
         variant='standard'
         helperText='*必須'
-        {...(register('lastName'), { required: true })}
+        {...register('lastName', { required: true })}
       />
       <TextField
         placeholder='名'
@@ -40,10 +40,11 @@ function NameField() {
 }
 
 function DisplayNameField() {
-  const { register } = useFormContext()
+  const { register, watch } = useFormContext()
+  const lastName = watch('lastName')
   return (
     <TextField
-      placeholder='未入力で姓になります'
+      placeholder={`未入力で${lastName || '姓'}になります`}
       variant='standard'
       margin='normal'
       fullWidth
