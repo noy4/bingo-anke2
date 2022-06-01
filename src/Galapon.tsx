@@ -1,4 +1,5 @@
-import { CheckCircleOutline, PlayCircleOutline } from '@mui/icons-material'
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline'
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline'
 import { Button } from '@mui/material'
 import { useMemo, useState } from 'react'
 import { useFormContext } from 'react-hook-form'
@@ -118,7 +119,7 @@ export function Galapon({ q }: { q: Question }) {
       color='secondary'
       disableElevation
       disabled={!galable || done}
-      startIcon={done ? <CheckCircleOutline /> : <PlayCircleOutline />}
+      startIcon={done ? <CheckCircleOutlineIcon /> : <PlayCircleOutlineIcon />}
       onClick={onGalapon}
     >
       {done ? '済' : 'ガラポン'}

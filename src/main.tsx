@@ -7,6 +7,7 @@ import {
   BallsState,
   BingoCardState,
   BingoCountState,
+  DrawerState,
   ModalState,
   ScoreState,
   SlotCountState,
@@ -24,20 +25,22 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <ModalState.Provider>
-        <BingoCardState.Provider>
-          <BallsState.Provider>
-            <ScoreState.Provider>
-              <BingoCountState.Provider>
-                <SlotCountState.Provider>
-                  <SlotValuesState.Provider>
-                    <CssBaseline />
-                    <App />
-                  </SlotValuesState.Provider>
-                </SlotCountState.Provider>
-              </BingoCountState.Provider>
-            </ScoreState.Provider>
-          </BallsState.Provider>
-        </BingoCardState.Provider>
+        <DrawerState.Provider>
+          <BingoCardState.Provider>
+            <BallsState.Provider>
+              <ScoreState.Provider>
+                <BingoCountState.Provider>
+                  <SlotCountState.Provider>
+                    <SlotValuesState.Provider>
+                      <CssBaseline />
+                      <App />
+                    </SlotValuesState.Provider>
+                  </SlotCountState.Provider>
+                </BingoCountState.Provider>
+              </ScoreState.Provider>
+            </BallsState.Provider>
+          </BingoCardState.Provider>
+        </DrawerState.Provider>
       </ModalState.Provider>
     </ThemeProvider>
   </React.StrictMode>

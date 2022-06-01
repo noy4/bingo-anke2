@@ -1,11 +1,24 @@
-import { Box, Button, Card, Container, Stack, Typography } from '@mui/material'
+import MenuIcon from '@mui/icons-material/Menu'
+import {
+  Box,
+  Button,
+  Card,
+  Container,
+  Drawer,
+  Fab,
+  Stack,
+  Typography,
+} from '@mui/material'
 import { FormProvider, useForm } from 'react-hook-form'
+import { Bingo } from './Bingo'
 import { BingoModal } from './BingoModal'
 import { Field } from './Fields'
 import { Galapon } from './Galapon'
 import { questionsA, titleA } from './questionsA'
+import { DrawerState } from './state'
 
 function App() {
+  const { isOpen, onOpen, onClose } = DrawerState.useContainer()
   const formMethods = useForm()
   const { handleSubmit } = formMethods
   const onSubmit = handleSubmit((data) => {
@@ -14,7 +27,13 @@ function App() {
 
   return (
     <FormProvider {...formMethods}>
+      <Fab sx={{ position: 'fixed', bottom: 8, left: 8 }} onClick={onOpen}>
+        <MenuIcon />
+      </Fab>
       <BingoModal />
+      <Drawer open={isOpen} onClose={onClose}>
+        <Bingo sx={{ m: 2 }} />
+      </Drawer>
 
       <Container maxWidth='xs'>
         <form onSubmit={onSubmit}>
