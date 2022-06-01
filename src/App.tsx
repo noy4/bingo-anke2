@@ -1,21 +1,11 @@
-import PlayCircleOutlinedIcon from '@mui/icons-material/PlayCircleOutlined'
-import {
-  Box,
-  Button,
-  Card,
-  Container,
-  CssBaseline,
-  Stack,
-  Typography,
-} from '@mui/material'
+import { Box, Button, Card, Container, Stack, Typography } from '@mui/material'
 import { FormProvider, useForm } from 'react-hook-form'
 import { BingoModal } from './BingoModal'
 import { Field } from './Fields'
+import { Galapon } from './Galapon'
 import { questionsA, titleA } from './questionsA'
-import { ModalState } from './state'
 
 function App() {
-  const { onOpen } = ModalState.useContainer()
   const formMethods = useForm()
   const { handleSubmit } = formMethods
   const onSubmit = handleSubmit((data) => {
@@ -40,15 +30,7 @@ function App() {
               </Typography>
               <Field q={q} />
               <Stack direction='row' justifyContent='flex-end'>
-                <Button
-                  variant='contained'
-                  color='secondary'
-                  disableElevation
-                  startIcon={<PlayCircleOutlinedIcon />}
-                  onClick={onOpen}
-                >
-                  {'ガラポン'}
-                </Button>
+                <Galapon q={q} />
               </Stack>
             </Card>
           ))}
