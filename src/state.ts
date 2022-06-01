@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { createContainer } from 'unstated-next'
 import { makeBingoCard } from './bingoCard'
+import { Ranker } from './types'
 
 const useDisclosure = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -40,4 +41,26 @@ export const SlotCountState = createContainer(() => {
 export const SlotValuesState = createContainer(() => {
   const [slotValues, setSlotValues] = useState<{ [key: number]: number }>({})
   return { slotValues, setSlotValues }
+})
+
+export const RankersState = createContainer(() => {
+  const [rankers, setRankers] = useState<Ranker[]>(() => {
+    const base: Ranker[] = [...Array(15)].map((_, i) => ({
+      rank: i + 1,
+      name: '田中aaaaaaaaaaa',
+      from: '九州大学',
+      bingoCount: i + 1,
+      score: (i + 1) * 100,
+    }))
+    const me: Ranker = {
+      me: true,
+      rank: base.length + 1,
+      name: 'あなた',
+      from: '',
+      bingoCount: 0,
+      score: 0,
+    }
+    return [...base, me]
+  })
+  return { rankers, setRankers }
 })

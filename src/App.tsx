@@ -15,6 +15,7 @@ import { BingoModal } from './BingoModal'
 import { Field } from './Fields'
 import { Galapon } from './Galapon'
 import { questionsA, titleA } from './questionsA'
+import { Ranking } from './Ranking'
 import { DrawerState } from './state'
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
       </Fab>
       <BingoModal />
       <Drawer open={isOpen} onClose={onClose}>
+        <Ranking />
         <Bingo sx={{ m: 2 }} />
       </Drawer>
 

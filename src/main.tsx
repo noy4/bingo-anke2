@@ -9,6 +9,7 @@ import {
   BingoCountState,
   DrawerState,
   ModalState,
+  RankersState,
   ScoreState,
   SlotCountState,
   SlotValuesState,
@@ -32,8 +33,10 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                 <BingoCountState.Provider>
                   <SlotCountState.Provider>
                     <SlotValuesState.Provider>
-                      <CssBaseline />
-                      <App />
+                      <RankersState.Provider>
+                        <CssBaseline />
+                        <App />
+                      </RankersState.Provider>
                     </SlotValuesState.Provider>
                   </SlotCountState.Provider>
                 </BingoCountState.Provider>
