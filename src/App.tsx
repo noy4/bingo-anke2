@@ -16,6 +16,7 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
+import { useEffect } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
 import { DoneDialog } from './components/DoneDialog'
 
@@ -35,6 +36,10 @@ function App() {
     drawer.onOpen()
     dialog.onOpen()
   })
+
+  useEffect(() => {
+    drawer.onOpen()
+  }, [])
 
   return (
     <FormProvider {...formMethods}>

@@ -1,4 +1,4 @@
-import { createTheme, CssBaseline, ThemeProvider } from '@mui/material'
+import { createTheme, CssBaseline, Grow, ThemeProvider } from '@mui/material'
 import { pink } from '@mui/material/colors'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
@@ -33,6 +33,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           vertical: 'top',
           horizontal: 'right',
         }}
+        TransitionComponent={Grow}
       >
         <ModalState.Provider>
           <DrawerState.Provider>

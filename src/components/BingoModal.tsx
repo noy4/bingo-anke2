@@ -16,7 +16,7 @@ export function BingoModal() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            mt: 16,
+            mt: 12,
           }}
         >
           <Stack direction='row' flexWrap='wrap' justifyContent='center'>
