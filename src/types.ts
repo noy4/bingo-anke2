@@ -1,7 +1,6 @@
 export type Ranker = {
   me?: boolean
-  rank: number
-  name: string
+  displayName: string
   from: string
   bingoCount: number
   score: number

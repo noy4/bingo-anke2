@@ -22,7 +22,10 @@ import {
   ScoreState,
   SlotCountState,
   SlotValuesState,
+  RankersState,
+  RankState,
 } from '@/state'
+import { Ranker } from '@/types'
 
 const sleep = (ms: number) => {
   return new Promise((resolve) => setTimeout(resolve, ms))
@@ -34,10 +37,12 @@ export function Galapon({ q }: { q: Question }) {
   const { balls, setBalls } = BallsState.useContainer()
   const { score, setScore } = ScoreState.useContainer()
   const { bingoCount, setBingoCount } = BingoCountState.useContainer()
-  const { setSlotValues } = SlotValuesState.useContainer()
   const { setSlotCount } = SlotCountState.useContainer()
+  const { setSlotValues } = SlotValuesState.useContainer()
+  const { rankers, setRankers } = RankersState.useContainer()
+  const { setRank } = RankState.useContainer()
   const [done, setDone] = useState(false)
-  const { watch } = useFormContext()
+  const { watch, getValues } = useFormContext()
   const formValues = watch()
 
   const galable = useMemo(() => {
@@ -62,14 +67,40 @@ export function Galapon({ q }: { q: Question }) {
     setSlotValues((prev) => ({ ...prev, ...slotValuesCopy }))
   }
 
+  function handleRank({
+    newBingoCount,
+    newScore,
+  }: {
+    newBingoCount: number
+    newScore: number
+  }) {
+    const rankersCopy = [...rankers]
+    const prevIndex = rankersCopy.findIndex((ranker) => ranker.me)
+    const prevRanker = rankersCopy[prevIndex]
+    const newRanker: Ranker = {
+      ...prevRanker,
+      displayName:
+        getValues('displayName') || getValues('lastName') || 'あなた',
+      from: getValues('from'),
+      bingoCount: newBingoCount,
+      score: newScore,
+    }
+    rankersCopy[prevIndex] = newRanker
+    rankersCopy.sort((a, b) => b.score - a.score)
+    rankersCopy.sort((a, b) => b.bingoCount - a.bingoCount)
+    setRankers(rankersCopy)
+    const newIndex = rankersCopy.findIndex((ranker) => ranker.me)
+    setRank({ prev: prevIndex + 1, current: newIndex + 1 })
+  }
+
   async function onGalapon() {
     onOpen()
     setDone(true)
     setSlotCount(q.slotCount)
 
     const slotIndexes = [...Array(q.slotCount)].map((_, i) => i)
-    const ballsCopy = [...balls]
-    const drawnBalls: number[] = []
+    let ballsCopy = [...balls]
+    let drawnBalls: number[] = []
 
     // スロットを回す
     const interval = setInterval(() => slot(slotIndexes), 50)
@@ -87,7 +118,7 @@ export function Galapon({ q }: { q: Question }) {
     clearInterval(interval)
     await sleep(500)
     let scoreCopy = score
-    const bingoCardCopy = [...bingoCard]
+    let bingoCardCopy = [...bingoCard]
 
     // あたりを順番に反映
     for (const ball of drawnBalls) {
@@ -98,7 +129,7 @@ export function Galapon({ q }: { q: Question }) {
           ...bingoCardCopy[squareIndex],
           isValid: true,
         }
-        setBingoCard(bingoCardCopy)
+        setBingoCard([...bingoCardCopy])
         scoreCopy += ball
       }
     }
@@ -109,6 +140,7 @@ export function Galapon({ q }: { q: Question }) {
     setBingoCount(newBingoCount)
     setScore(scoreCopy)
     setBalls(ballsCopy)
+    handleRank({ newBingoCount, newScore: scoreCopy })
   }
 
   return (
@@ -116,7 +148,7 @@ export function Galapon({ q }: { q: Question }) {
       variant='contained'
       color='secondary'
       disableElevation
-      disabled={!galable || done}
+      // disabled={!galable || done}
       startIcon={done ? <CheckCircleOutlineIcon /> : <PlayCircleOutlineIcon />}
       onClick={onGalapon}
     >

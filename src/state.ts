@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { createContainer } from 'unstated-next'
 import { makeBingoCard } from '@/lib/bingoCard'
 import { Ranker } from '@/types'
+import rankersJson from '@/assets/rankers.json'
 
 const useDisclosure = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -45,22 +46,21 @@ export const SlotValuesState = createContainer(() => {
 
 export const RankersState = createContainer(() => {
   const [rankers, setRankers] = useState<Ranker[]>(() => {
-    const base: Ranker[] = [...Array(15)].map((_, i) => ({
-      rank: i + 1,
-      name: '田中aaaaaaaaaaa',
-      from: '九州大学',
-      bingoCount: i + 1,
-      score: (i + 1) * 100,
-    }))
+    rankersJson.sort((a, b) => b.score - a.score)
+    rankersJson.sort((a, b) => b.bingoCount - a.bingoCount)
     const me: Ranker = {
       me: true,
-      rank: base.length + 1,
-      name: 'あなた',
+      displayName: 'あなた',
       from: '',
       bingoCount: 0,
       score: 0,
     }
-    return [...base, me]
+    return [...rankersJson, me]
   })
   return { rankers, setRankers }
+})
+
+export const RankState = createContainer(() => {
+  const [rank, setRank] = useState({ prev: 0, current: 0 })
+  return { rank, setRank }
 })

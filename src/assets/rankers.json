@@ -1,0 +1,464 @@
+[
+  {
+    "id": "e667ff6c-2d39-4b74-91f7-60aede780912",
+    "displayName": "ざっきー",
+    "from": "福山市立大学",
+    "bingoCount": 0,
+    "score": 0
+  },
+  {
+    "id": "d4242134-6f0b-47cf-a16d-c46f682a268b",
+    "displayName": "茅田",
+    "from": "金沢大学",
+    "bingoCount": 5,
+    "score": 717
+  },
+  {
+    "id": "245767d5-4d16-46b6-9d62-3b19e3dac128",
+    "displayName": "DJ",
+    "from": "県立広島",
+    "bingoCount": 5,
+    "score": 799
+  },
+  {
+    "id": "bd62dfa7-7a95-4a9a-86d5-1eb8c2d309b0",
+    "displayName": "io",
+    "from": "九州大学",
+    "bingoCount": 4,
+    "score": 720
+  },
+  {
+    "id": "f0ce80df-c4fd-470c-b15e-cbe11c51e864",
+    "displayName": "中本",
+    "from": "愛媛大学",
+    "bingoCount": 0,
+    "score": 0
+  },
+  {
+    "id": "be11d307-0854-440e-a328-d3ea2db32f2a",
+    "displayName": "108",
+    "from": "九州大学",
+    "bingoCount": 4,
+    "score": 753
+  },
+  {
+    "id": "7fba5e24-5bf1-4810-9c22-5493d565b4fd",
+    "displayName": "おなぬ金太郎",
+    "from": "岡山大学",
+    "bingoCount": 2,
+    "score": 612
+  },
+  {
+    "id": "a8be1bab-c9da-42fb-9fb6-7793ee823181",
+    "displayName": "yoshizo",
+    "from": "みかん",
+    "bingoCount": 0,
+    "score": 330
+  },
+  {
+    "id": "1acb16c3-5302-4461-9d04-f4a2de5a07df",
+    "displayName": "熱田",
+    "from": "広島大学",
+    "bingoCount": 0,
+    "score": 0
+  },
+  {
+    "id": "9cc51456-891a-46bd-b016-638bb1f7de57",
+    "displayName": "ぷりん",
+    "from": "名古屋市立大学",
+    "bingoCount": 0,
+    "score": 0
+  },
+  {
+    "id": "36d9d3e4-a9c0-4199-b5dd-52ee6dcc2284",
+    "displayName": "じょ",
+    "from": "神戸大学",
+    "bingoCount": 4,
+    "score": 759
+  },
+  {
+    "id": "5f80a590-40bb-49c2-b3cb-e09c27610905",
+    "displayName": "灘岡",
+    "from": "芝浦工業大学",
+    "bingoCount": 3,
+    "score": 801
+  },
+  {
+    "id": "9ab01c93-8ebd-4c10-a494-f40a891df5a5",
+    "displayName": "かんの",
+    "from": "日本大学",
+    "bingoCount": 4,
+    "score": 755
+  },
+  {
+    "id": "f58f840f-6b9c-4426-a439-95dd5a402a07",
+    "displayName": "たに",
+    "from": "香川大学",
+    "bingoCount": 0,
+    "score": 0
+  },
+  {
+    "id": "2142f0f1-381f-4c3d-9c02-48d5120fa858",
+    "displayName": "にしの",
+    "from": "大阪大学",
+    "bingoCount": 2,
+    "score": 720
+  },
+  {
+    "id": "daf2a918-6ae6-4236-aa0d-14cbf386fb15",
+    "displayName": "ピークボーンマス",
+    "from": "九州大学",
+    "bingoCount": 5,
+    "score": 688
+  },
+  {
+    "id": "f43a5c6a-6bdc-404e-9d00-4877853d7392",
+    "displayName": "まこ",
+    "from": "大阪市立大学",
+    "bingoCount": 5,
+    "score": 830
+  },
+  {
+    "id": "f4d5d4d3-f5c7-44c8-9814-7fa22f0e0c3f",
+    "displayName": "なか",
+    "from": "京都女子大学",
+    "bingoCount": 4,
+    "score": 667
+  },
+  {
+    "id": "e5c09660-a944-49db-a771-5ef1b3057995",
+    "displayName": "Morimoto",
+    "from": "九州大学",
+    "bingoCount": 0,
+    "score": 100
+  },
+  {
+    "id": "9b7c819d-2a5b-437b-b5dd-f2479c53cae3",
+    "displayName": "井上",
+    "from": "徳島大学",
+    "bingoCount": 2,
+    "score": 675
+  },
+  {
+    "id": "d430a5fa-57e3-4386-836c-11ca1c76442c",
+    "displayName": "ゆっちー",
+    "from": "大阪大学",
+    "bingoCount": 7,
+    "score": 749
+  },
+  {
+    "id": "b5c00087-0c8c-413b-9e17-bf7281313168",
+    "displayName": "F好き社長",
+    "from": "宮崎大学",
+    "bingoCount": 0,
+    "score": 488
+  },
+  {
+    "id": "45a48882-e6aa-4d01-85c6-082d70a34d58",
+    "displayName": "すっとこどっこい",
+    "from": "九州大学",
+    "bingoCount": 4,
+    "score": 851
+  },
+  {
+    "id": "f4a0f4a1-c5b4-498a-861a-5fb730234185",
+    "displayName": "藤谷",
+    "from": "愛媛大学",
+    "bingoCount": 4,
+    "score": 743
+  },
+  {
+    "id": "0505b3d0-fc63-4127-907a-4c1cc880f046",
+    "displayName": "徳山",
+    "from": "",
+    "bingoCount": 0,
+    "score": 15
+  },
+  {
+    "id": "76d521c5-ad1c-4847-a9f5-0a975c1abcf5",
+    "displayName": "ひめか",
+    "from": "九州大学",
+    "bingoCount": 1,
+    "score": 580
+  },
+  {
+    "id": "17cc1947-9968-46b2-b057-a1bed70ff2e3",
+    "displayName": "しっきー",
+    "from": "愛媛大学",
+    "bingoCount": 5,
+    "score": 845
+  },
+  {
+    "id": "f7acd57d-0f4d-4783-9659-778c4e1ad239",
+    "displayName": "山田オ太郎",
+    "from": "岡山大学",
+    "bingoCount": 3,
+    "score": 716
+  },
+  {
+    "id": "c7653966-e312-4fe4-b044-dfdfc7fe14cb",
+    "displayName": "すんみ",
+    "from": "兵庫県立大学",
+    "bingoCount": 3,
+    "score": 742
+  },
+  {
+    "id": "9f941129-1aee-49ea-9b18-bb3b0a0ca1f5",
+    "displayName": "公開名",
+    "from": "九州大学",
+    "bingoCount": 2,
+    "score": 615
+  },
+  {
+    "id": "d74311b8-dd02-4ff3-9112-3efc32b4b609",
+    "displayName": "雌豚",
+    "from": "愛媛大学",
+    "bingoCount": 6,
+    "score": 735
+  },
+  {
+    "id": "464c6bb1-410e-4a96-a36d-9537288865e7",
+    "displayName": "カミオカ",
+    "from": "宮崎大学",
+    "bingoCount": 0,
+    "score": 0
+  },
+  {
+    "id": "42b7ed0b-9fe3-4c50-ad8d-16809591e2ac",
+    "displayName": "いっくん",
+    "from": "岡山大学",
+    "bingoCount": 3,
+    "score": 718
+  },
+  {
+    "id": "00208a22-86d7-4a99-b1da-6ed5f61493c0",
+    "displayName": "あま",
+    "from": "関西学院大学",
+    "bingoCount": 2,
+    "score": 709
+  },
+  {
+    "id": "7f2efba8-8cb2-438c-add6-3328fda8f6ad",
+    "displayName": "宮内",
+    "from": "JAIST",
+    "bingoCount": 3,
+    "score": 691
+  },
+  {
+    "id": "e47dd225-e4ed-4a81-9f32-8ace3970bc21",
+    "displayName": "樋口",
+    "from": "九州大学",
+    "bingoCount": 0,
+    "score": 0
+  },
+  {
+    "id": "b4ba2fb5-27e5-44c8-823a-f5174336f77d",
+    "displayName": "青野",
+    "from": "慶應義塾大学",
+    "bingoCount": 0,
+    "score": 0
+  },
+  {
+    "id": "cbf22567-191b-471f-a61a-0b78e09ea15c",
+    "displayName": "みさき",
+    "from": "愛媛大学",
+    "bingoCount": 2,
+    "score": 679
+  },
+  {
+    "id": "d3d23a23-8bed-4cbb-b9e4-e5e6fc65d21a",
+    "displayName": "けーまい",
+    "from": "愛媛大学",
+    "bingoCount": 0,
+    "score": 0
+  },
+  {
+    "id": "eb29f6df-730e-4fcd-9368-37fc5554be27",
+    "displayName": "三好",
+    "from": "関西学院大学",
+    "bingoCount": 3,
+    "score": 691
+  },
+  {
+    "id": "860b82fe-1c71-4b8b-8450-c640b4bbef8e",
+    "displayName": "AAAA",
+    "from": "九州大学",
+    "bingoCount": 0,
+    "score": 0
+  },
+  {
+    "id": "63ca4620-815a-49fe-938f-a8862dd6a184",
+    "displayName": "よーいち",
+    "from": "九州大学",
+    "bingoCount": 7,
+    "score": 681
+  },
+  {
+    "id": "1e08c8a2-6bc0-46c7-8622-7da17f23ac65",
+    "displayName": "たかっぴ",
+    "from": "東京都立大学",
+    "bingoCount": 0,
+    "score": 0
+  },
+  {
+    "id": "2e388e10-cf75-433f-af55-7b1dd43ff6e3",
+    "displayName": "ササヤン",
+    "from": "九州大学",
+    "bingoCount": 3,
+    "score": 531
+  },
+  {
+    "id": "45eec596-c24e-4d64-9330-363353c224ce",
+    "displayName": "a",
+    "from": "愛媛大学",
+    "bingoCount": 0,
+    "score": 597
+  },
+  {
+    "id": "eb403425-e156-4e4f-8406-32b1d7afd1d9",
+    "displayName": "たと",
+    "from": "愛媛大学",
+    "bingoCount": 6,
+    "score": 806
+  },
+  {
+    "id": "3b16ad5d-e333-4118-bc85-1f51935bd5e1",
+    "displayName": "N.",
+    "from": "奈良教育大学",
+    "bingoCount": 0,
+    "score": 0
+  },
+  {
+    "id": "fe99a528-e9ce-4c23-be5c-19902410abad",
+    "displayName": "なつき",
+    "from": "立命館大学",
+    "bingoCount": 4,
+    "score": 781
+  },
+  {
+    "id": "e1a0fc7d-63b4-411d-815d-229c986262ef",
+    "displayName": "みさき",
+    "from": "愛媛大学",
+    "bingoCount": 3,
+    "score": 691
+  },
+  {
+    "id": "01301c72-35e3-4603-b31e-15483b00f12f",
+    "displayName": "ぱしだ",
+    "from": "工学院大学",
+    "bingoCount": 3,
+    "score": 747
+  },
+  {
+    "id": "73f2bf35-e5d9-45f7-ac37-edac7a68b87a",
+    "displayName": "🐝",
+    "from": "神戸大学",
+    "bingoCount": 3,
+    "score": 697
+  },
+  {
+    "id": "fd84e86f-fa68-4f13-b5f4-02f903f3f5b7",
+    "displayName": "たろ",
+    "from": "愛媛大学",
+    "bingoCount": 2,
+    "score": 558
+  },
+  {
+    "id": "b47a21b0-398b-46e0-ad42-71836c791f5f",
+    "displayName": "菅原大二郎",
+    "from": "愛媛大学",
+    "bingoCount": 4,
+    "score": 754
+  },
+  {
+    "id": "7c5e4f0c-a956-47d4-a482-26e2c5f7c508",
+    "displayName": "勝部",
+    "from": "九州大学",
+    "bingoCount": 4,
+    "score": 759
+  },
+  {
+    "id": "94e854a3-6d9d-4a11-ba91-000aab2094c4",
+    "displayName": "みかん",
+    "from": "九州大学",
+    "bingoCount": 4,
+    "score": 579
+  },
+  {
+    "id": "ba4f83ea-8104-4c86-ba06-0733f538a04e",
+    "displayName": "石田",
+    "from": "立命館大学",
+    "bingoCount": 0,
+    "score": 0
+  },
+  {
+    "id": "946c4801-0485-4ad8-81e2-b79946c20f3c",
+    "displayName": "nemo",
+    "from": "",
+    "bingoCount": 0,
+    "score": 0
+  },
+  {
+    "id": "1a6444e7-a483-4eb2-a93e-82f1ce126769",
+    "displayName": "きつね",
+    "from": "同志社大学",
+    "bingoCount": 5,
+    "score": 690
+  },
+  {
+    "id": "d66f434b-b8a6-4afe-8735-2b7798331cab",
+    "displayName": "よしき",
+    "from": "大阪大学",
+    "bingoCount": 3,
+    "score": 709
+  },
+  {
+    "id": "6d6ce647-1778-4a78-b931-d8da357b17f9",
+    "displayName": "やま",
+    "from": "九州大学",
+    "bingoCount": 6,
+    "score": 597
+  },
+  {
+    "id": "e49bc362-2137-4ca5-8aa9-33f191209a5b",
+    "displayName": "おそら",
+    "from": "同志社大学",
+    "bingoCount": 1,
+    "score": 593
+  },
+  {
+    "id": "b00eeb95-a124-4e06-b749-d4e25109562b",
+    "displayName": "竹葉",
+    "from": "龍谷大学",
+    "bingoCount": 7,
+    "score": 837
+  },
+  {
+    "id": "37c507d9-4a44-4b1d-9b35-a931c9ea4648",
+    "displayName": "メコ",
+    "from": "九大",
+    "bingoCount": 8,
+    "score": 863
+  },
+  {
+    "id": "3df715e5-4af0-4553-ba0d-0deb46ad462e",
+    "displayName": "小松",
+    "from": "九州大学",
+    "bingoCount": 0,
+    "score": 0
+  },
+  {
+    "id": "95ac8173-e4ad-485d-a891-4b4d0b4d129f",
+    "displayName": "福田",
+    "from": "徳島大学",
+    "bingoCount": 0,
+    "score": 508
+  },
+  {
+    "id": "b55cce0c-52e1-4ece-b553-a95d504b00b7",
+    "displayName": "KURA",
+    "from": "関西大学",
+    "bingoCount": 7,
+    "score": 849
+  }
+]

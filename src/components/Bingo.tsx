@@ -2,37 +2,35 @@ import { Box, Avatar, Paper, Grid, SxProps } from '@mui/material'
 import { blue } from '@mui/material/colors'
 import { BingoCardState } from '@/state'
 
-export function Bingo({ sx }: { sx?: SxProps }) {
+const Square = ({ i }: { i: number }) => {
   const { bingoCard } = BingoCardState.useContainer()
+  const { isValid, value } = bingoCard[i]
+  const squareStyle: SxProps = isValid
+    ? { bgcolor: blue[200], color: 'white' }
+    : { bgcolor: 'white', color: blue[200] }
 
-  const renderSquare = (i: number) => {
-    const squareStyle: SxProps = bingoCard[i].isValid
-      ? { bgcolor: blue[200], color: 'white' }
-      : { bgcolor: 'white', color: blue[200] }
-
-    return (
-      <Box p={0.2}>
-        <Box bgcolor='white' borderRadius='10px'>
-          <Avatar sx={{ fontWeight: 'bold', ...squareStyle }}>
-            {bingoCard[i].value}
-          </Avatar>
-        </Box>
+  return (
+    <Box p={0.2}>
+      <Box bgcolor='white' borderRadius='10px'>
+        <Avatar sx={{ fontWeight: 'bold', ...squareStyle }}>{value}</Avatar>
       </Box>
-    )
-  }
+    </Box>
+  )
+}
 
+export function Bingo({ sx }: { sx?: SxProps }) {
   return (
     <Paper
       elevation={3}
-      sx={{ display: 'inline-flex', bgcolor: blue[200], p: 1, ...sx }}
+      sx={{ display: 'flex', width: 232, bgcolor: blue[200], p: 1, ...sx }}
     >
       {[...Array(5)].map((_, i) => (
         <Box key={i}>
-          {renderSquare(i * 5 + 0)}
-          {renderSquare(i * 5 + 1)}
-          {renderSquare(i * 5 + 2)}
-          {renderSquare(i * 5 + 3)}
-          {renderSquare(i * 5 + 4)}
+          <Square i={i * 5 + 0} />
+          <Square i={i * 5 + 1} />
+          <Square i={i * 5 + 2} />
+          <Square i={i * 5 + 3} />
+          <Square i={i * 5 + 4} />
         </Box>
       ))}
     </Paper>

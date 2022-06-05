@@ -11,7 +11,7 @@ export function Ranking() {
         ランキング
       </Typography>
 
-      <List sx={{ overflow: 'scroll', flex: 1, mx: 2 }}>
+      <List sx={{ overflow: 'scroll', flex: 1, px: 2 }}>
         {rankers.map((ranker, index) => (
           <Paper
             key={index}
@@ -30,7 +30,7 @@ export function Ranking() {
 
             <Box width={160} mr={2}>
               <Typography noWrap>
-                {ranker.name}（{ranker.from}）
+                {ranker.displayName}（{ranker.from}）
               </Typography>
               <Box display='flex' justifyContent='space-between' fontSize={14}>
                 <Box>{ranker.bingoCount} BINGO</Box>

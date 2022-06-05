@@ -10,6 +10,7 @@ import {
   DrawerState,
   ModalState,
   RankersState,
+  RankState,
   ScoreState,
   SlotCountState,
   SlotValuesState,
@@ -34,8 +35,10 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                   <SlotCountState.Provider>
                     <SlotValuesState.Provider>
                       <RankersState.Provider>
-                        <CssBaseline />
-                        <App />
+                        <RankState.Provider>
+                          <CssBaseline />
+                          <App />
+                        </RankState.Provider>
                       </RankersState.Provider>
                     </SlotValuesState.Provider>
                   </SlotCountState.Provider>
