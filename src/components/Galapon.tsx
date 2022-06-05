@@ -1,8 +1,3 @@
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline'
-import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline'
-import { Button } from '@mui/material'
-import { useMemo, useState } from 'react'
-import { useFormContext } from 'react-hook-form'
 import { checkBingo } from '@/lib/bingoCard'
 import {
   DISPLAY_NAME,
@@ -19,13 +14,21 @@ import {
   BingoCardState,
   BingoCountState,
   ModalState,
+  RankersState,
+  RankState,
   ScoreState,
   SlotCountState,
   SlotValuesState,
-  RankersState,
-  RankState,
 } from '@/state'
 import { Ranker } from '@/types'
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline'
+import Flare from '@mui/icons-material/Flare'
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline'
+import TrendingUp from '@mui/icons-material/TrendingUp'
+import { Alert, Button } from '@mui/material'
+import { useSnackbar } from 'notistack'
+import { useMemo, useState } from 'react'
+import { useFormContext } from 'react-hook-form'
 
 const sleep = (ms: number) => {
   return new Promise((resolve) => setTimeout(resolve, ms))
@@ -41,7 +44,9 @@ export function Galapon({ q }: { q: Question }) {
   const { setSlotValues } = SlotValuesState.useContainer()
   const { rankers, setRankers } = RankersState.useContainer()
   const { setRank } = RankState.useContainer()
+
   const [done, setDone] = useState(false)
+  const { enqueueSnackbar } = useSnackbar()
   const { watch, getValues } = useFormContext()
   const formValues = watch()
 
@@ -91,6 +96,21 @@ export function Galapon({ q }: { q: Question }) {
     setRankers(rankersCopy)
     const newIndex = rankersCopy.findIndex((ranker) => ranker.me)
     setRank({ prev: prevIndex + 1, current: newIndex + 1 })
+
+    if (prevIndex !== newIndex) {
+      enqueueSnackbar('', {
+        content: (
+          <Alert
+            variant='filled'
+            severity='info'
+            elevation={6}
+            icon={<TrendingUp fontSize='inherit' />}
+          >
+            {prevIndex - newIndex}人抜き（現在{newIndex + 1 || '最下'}位）
+          </Alert>
+        ),
+      })
+    }
   }
 
   async function onGalapon() {
@@ -119,6 +139,7 @@ export function Galapon({ q }: { q: Question }) {
     await sleep(500)
     let scoreCopy = score
     let bingoCardCopy = [...bingoCard]
+    let bingoCountCopy = bingoCount
 
     // あたりを順番に反映
     for (const ball of drawnBalls) {
@@ -131,16 +152,30 @@ export function Galapon({ q }: { q: Question }) {
         }
         setBingoCard([...bingoCardCopy])
         scoreCopy += ball
+        const newBingoCount = checkBingo(bingoCardCopy)
+
+        if (bingoCountCopy !== newBingoCount) {
+          enqueueSnackbar('', {
+            content: (
+              <Alert
+                variant='filled'
+                severity='info'
+                elevation={6}
+                icon={<Flare fontSize='inherit' />}
+              >
+                {newBingoCount}ビンゴ
+              </Alert>
+            ),
+          })
+          bingoCountCopy = newBingoCount
+        }
       }
     }
 
-    const newBingoCount = checkBingo(bingoCardCopy)
-
-    // if(newBingoCount!==bingoCount)
-    setBingoCount(newBingoCount)
+    setBingoCount(bingoCountCopy)
     setScore(scoreCopy)
     setBalls(ballsCopy)
-    handleRank({ newBingoCount, newScore: scoreCopy })
+    handleRank({ newBingoCount: bingoCountCopy, newScore: scoreCopy })
   }
 
   return (
@@ -148,7 +183,7 @@ export function Galapon({ q }: { q: Question }) {
       variant='contained'
       color='secondary'
       disableElevation
-      // disabled={!galable || done}
+      disabled={!galable || done}
       startIcon={done ? <CheckCircleOutlineIcon /> : <PlayCircleOutlineIcon />}
       onClick={onGalapon}
     >
