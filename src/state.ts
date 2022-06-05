@@ -13,6 +13,7 @@ const useDisclosure = () => {
 
 export const ModalState = createContainer(() => useDisclosure())
 export const DrawerState = createContainer(() => useDisclosure())
+export const DialogState = createContainer(() => useDisclosure())
 
 export const BingoCardState = createContainer(() => {
   const [bingoCard, setBingoCard] = useState(() => makeBingoCard())

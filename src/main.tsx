@@ -7,6 +7,7 @@ import {
   BallsState,
   BingoCardState,
   BingoCountState,
+  DialogState,
   DrawerState,
   ModalState,
   RankersState,
@@ -35,24 +36,26 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       >
         <ModalState.Provider>
           <DrawerState.Provider>
-            <BingoCardState.Provider>
-              <BallsState.Provider>
-                <ScoreState.Provider>
-                  <BingoCountState.Provider>
-                    <SlotCountState.Provider>
-                      <SlotValuesState.Provider>
-                        <RankersState.Provider>
-                          <RankState.Provider>
-                            <CssBaseline />
-                            <App />
-                          </RankState.Provider>
-                        </RankersState.Provider>
-                      </SlotValuesState.Provider>
-                    </SlotCountState.Provider>
-                  </BingoCountState.Provider>
-                </ScoreState.Provider>
-              </BallsState.Provider>
-            </BingoCardState.Provider>
+            <DialogState.Provider>
+              <BingoCardState.Provider>
+                <BallsState.Provider>
+                  <ScoreState.Provider>
+                    <BingoCountState.Provider>
+                      <SlotCountState.Provider>
+                        <SlotValuesState.Provider>
+                          <RankersState.Provider>
+                            <RankState.Provider>
+                              <CssBaseline />
+                              <App />
+                            </RankState.Provider>
+                          </RankersState.Provider>
+                        </SlotValuesState.Provider>
+                      </SlotCountState.Provider>
+                    </BingoCountState.Provider>
+                  </ScoreState.Provider>
+                </BallsState.Provider>
+              </BingoCardState.Provider>
+            </DialogState.Provider>
           </DrawerState.Provider>
         </ModalState.Provider>
       </SnackbarProvider>
